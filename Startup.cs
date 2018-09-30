@@ -32,7 +32,7 @@ namespace MessengerAPI
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
-                var filePath = System.IO.Path.Combine(Microsoft.Extensions.PlatformAbstractions.PlatformServices.Default.Application.ApplicationBasePath, "api.xml");
+                var filePath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), System.Reflection.Assembly.GetExecutingAssembly().GetName().Name+".xml");
                 c.IncludeXmlComments(filePath);
             });
             // services.AddTransient<ISingleMessengerService, SingleMessengerService>();
